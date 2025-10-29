@@ -1,4 +1,10 @@
 package com.studynow.StreamingAPI.entities;
 
-public record Episode(Long id, String title, int number, String description, int duration, String videoUrl) {
+public class Episode {
+    private Long id;
+    private  String title;
+    private int number;
+    private String description;
+    private int duration;
+    private String videoUrl;
 }

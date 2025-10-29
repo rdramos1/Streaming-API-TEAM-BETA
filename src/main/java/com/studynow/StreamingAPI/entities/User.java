@@ -2,5 +2,12 @@ package com.studynow.StreamingAPI.entities;
 
 import com.studynow.StreamingAPI.enums.UserRole;
 
-public record User(Long id, String name, String email, String token, UserRole userRole) {
+public class User {
+
+    private Long id;
+    private String name;
+    private String email;
+    private String token;
+    private UserRole userRole;
+
 }

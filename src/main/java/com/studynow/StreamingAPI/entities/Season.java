@@ -1,4 +1,8 @@
 package com.studynow.StreamingAPI.entities;
 
-public record Season(Long id, int number, int releaseYear) {
+public class Season{
+    private Long id;
+    private int number;
+    private int releaseYear;
+
 }
