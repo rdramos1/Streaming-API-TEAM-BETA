@@ -1,16 +1,17 @@
 package com.studynow.StreamingAPI.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
 @Entity(name = "review")
 public class Review {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id;
     private int score;
     private String comment;
+    @Temporal(TemporalType.DATE)
     private  Date reviewDate;
 
     public Long getId() {

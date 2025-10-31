@@ -3,15 +3,13 @@ package com.studynow.StreamingAPI.entities;
 import com.studynow.StreamingAPI.averagerating.IAverageRating;
 import com.studynow.StreamingAPI.enums.Genre;
 import com.studynow.StreamingAPI.enums.Rating;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity(name = "movie")
 public class Movie implements IAverageRating {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String description;
