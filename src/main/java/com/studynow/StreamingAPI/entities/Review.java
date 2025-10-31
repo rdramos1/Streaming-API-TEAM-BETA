@@ -1,8 +1,13 @@
 package com.studynow.StreamingAPI.entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.util.Date;
 
+@Entity(name = "review")
 public class Review {
+    @Id
     private  Long id;
     private int score;
     private String comment;

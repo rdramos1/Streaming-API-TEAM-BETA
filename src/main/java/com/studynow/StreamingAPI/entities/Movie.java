@@ -3,14 +3,22 @@ package com.studynow.StreamingAPI.entities;
 import com.studynow.StreamingAPI.averagerating.IAverageRating;
 import com.studynow.StreamingAPI.enums.Genre;
 import com.studynow.StreamingAPI.enums.Rating;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.Id;
 
+@Entity(name = "movie")
 public class Movie implements IAverageRating {
 
+    @Id
     private Long id;
     private String title;
     private String description;
     private int releaseYear;
+    @Enumerated(EnumType.STRING)
     private Genre genre;
+    @Enumerated(EnumType.STRING)
     private  Rating rating;
     private int duration;
     private String director;

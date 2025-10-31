@@ -3,9 +3,13 @@ package com.studynow.StreamingAPI.entities;
 import com.studynow.StreamingAPI.averagerating.IAverageRating;
 import com.studynow.StreamingAPI.enums.Genre;
 import com.studynow.StreamingAPI.enums.Rating;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
+@Entity(name = "series")
 public class Series implements IAverageRating {
 
+    @Id
     private Long id;
     private String title;
     private String description;

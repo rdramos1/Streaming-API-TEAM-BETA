@@ -1,6 +1,11 @@
 package com.studynow.StreamingAPI.entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity(name = "episode")
 public class Episode {
+    @Id
     private Long id;
     private  String title;
     private int number;

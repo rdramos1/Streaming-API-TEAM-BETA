@@ -1,13 +1,20 @@
 package com.studynow.StreamingAPI.entities;
 
 import com.studynow.StreamingAPI.enums.UserRole;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.Id;
 
+@Entity(name = "user")
 public class User {
 
+    @Id
     private Long id;
     private String name;
     private String email;
     private String token;
+    @Enumerated(EnumType.STRING)
     private UserRole userRole;
 
     public Long getId() {
