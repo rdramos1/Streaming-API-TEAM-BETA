@@ -2,6 +2,7 @@ package com.studynow.StreamingAPI.entities;
 
 import jakarta.persistence.*;
 
+import java.time.Instant;
 import java.util.Date;
 
 @Entity(name = "review")
@@ -12,7 +13,7 @@ public class Review {
     private int score;
     private String comment;
     @Temporal(TemporalType.DATE)
-    private  Date reviewDate;
+    private Instant reviewDate;
 
     public Long getId() {
         return id;
@@ -38,11 +39,11 @@ public class Review {
         this.comment = comment;
     }
 
-    public Date getReviewDate() {
+    public Instant getReviewDate() {
         return reviewDate;
     }
 
-    public void setReviewDate(Date reviewDate) {
+    public void setReviewDate(Instant reviewDate) {
         this.reviewDate = reviewDate;
     }
 }
