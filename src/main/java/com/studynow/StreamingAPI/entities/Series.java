@@ -8,6 +8,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 
+import static jakarta.persistence.CascadeType.ALL;
+
 @Entity(name = "series")
 public class Series implements IAverageRating {
 
@@ -26,6 +28,9 @@ public class Series implements IAverageRating {
     private Rating rating;
     @Column(name = "total_seasons")
     private int totalSeasons;
+
+    public Series() {
+    }
 
     @Override
     public double calculateAverageRating() {

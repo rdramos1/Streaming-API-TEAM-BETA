@@ -11,6 +11,9 @@ public class Season{
     @Column(name = "release_year")
     private int releaseYear;
 
+    public Season() {
+    }
+
     public Long getId() {
         return id;
     }

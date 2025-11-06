@@ -21,6 +21,10 @@ public class User {
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
 
+    public User() {
+
+    }
+
     public Long getId() {
         return id;
     }

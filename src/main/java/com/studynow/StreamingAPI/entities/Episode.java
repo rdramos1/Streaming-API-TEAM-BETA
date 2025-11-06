@@ -19,6 +19,9 @@ public class Episode {
     @Column(name = "video_url")
     private String videoUrl;
 
+    public Episode() {
+    }
+
     public Long getId() {
         return id;
     }

@@ -11,6 +11,7 @@ import jakarta.validation.constraints.NotNull;
 @Entity(name = "movie")
 public class Movie implements IAverageRating {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -31,6 +32,8 @@ public class Movie implements IAverageRating {
     @Column(name = "video_url")
     private String videoUrl;
 
+    public Movie() {
+    }
 
     @Override
     public double calculateAverageRating() {

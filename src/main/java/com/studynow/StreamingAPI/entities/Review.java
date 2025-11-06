@@ -21,6 +21,10 @@ public class Review {
     @NotNull
     private Instant reviewDate;
 
+    public Review() {
+
+    }
+
     public Long getId() {
         return id;
     }
