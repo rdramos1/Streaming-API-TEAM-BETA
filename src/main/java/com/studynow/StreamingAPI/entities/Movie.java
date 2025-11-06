@@ -14,12 +14,9 @@ public class Movie implements IAverageRating {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotNull
     @NotBlank(message = "Title is mandatory")
     private String title;
-    @NotNull
     @NotBlank(message = "Description is mandatory")
-    @NotEmpty
     private String description;
     @Column(name = "video_url")
     private int releaseYear;
@@ -27,6 +24,7 @@ public class Movie implements IAverageRating {
     private Genre genre;
     @Enumerated(EnumType.STRING)
     private  Rating rating;
+    @NotNull
     private int duration;
     @NotBlank(message = "Director is mandatory")
     private String director;

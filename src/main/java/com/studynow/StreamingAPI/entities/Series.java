@@ -14,13 +14,9 @@ public class Series implements IAverageRating {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotNull
     @NotBlank(message = "Title is mandatory")
-    @NotEmpty
     private String title;
-    @NotNull
     @NotBlank(message = "Description is mandatory")
-    @NotEmpty
     private String description;
     @Column(name = "release_year")
     private int releaseYear;

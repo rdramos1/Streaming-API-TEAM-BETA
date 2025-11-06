@@ -13,12 +13,12 @@ public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id;
-    private int score;
     @NotNull
+    private int score;
     @NotBlank(message = "Comment is mandatory")
-    @NotEmpty
     private String comment;
     @Temporal(TemporalType.DATE)
+    @NotNull
     private Instant reviewDate;
 
     public Long getId() {

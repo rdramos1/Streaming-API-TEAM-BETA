@@ -12,10 +12,8 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotNull
     @NotBlank(message = "Name is mandatory")
     private String name;
-    @NotNull
     @Email
     @NotBlank(message = "Email is mandatory")
     private String email;
