@@ -12,6 +12,7 @@ public class Episode {
     private Long id;
     @NotBlank(message = "Title is mandatory")
     private  String title;
+    @NotNull
     private int number;
     @NotBlank(message = "Description is mandatory")
     private String description;
