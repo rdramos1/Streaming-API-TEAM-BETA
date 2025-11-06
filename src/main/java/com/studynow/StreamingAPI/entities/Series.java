@@ -5,10 +5,9 @@ import com.studynow.StreamingAPI.enums.Genre;
 import com.studynow.StreamingAPI.enums.Rating;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 
-import static jakarta.persistence.CascadeType.ALL;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity(name = "series")
 public class Series implements IAverageRating {
@@ -27,7 +26,8 @@ public class Series implements IAverageRating {
     @Enumerated(EnumType.STRING)
     private Rating rating;
     @Column(name = "total_seasons")
-    private int totalSeasons;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Season> totalSeasons = new ArrayList<>();
 
     public Series() {
     }
@@ -85,11 +85,11 @@ public class Series implements IAverageRating {
         this.rating = rating;
     }
 
-    public int getTotalSeasons() {
+    public List<Season> getTotalSeasons() {
         return totalSeasons;
     }
 
-    public void setTotalSeasons(int totalSeasons) {
+    public void setTotalSeasons(List<Season> totalSeasons) {
         this.totalSeasons = totalSeasons;
     }
 }

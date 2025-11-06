@@ -1,12 +1,14 @@
 package com.studynow.StreamingAPI.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
 @Entity(name = "season")
 public class Season{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotNull
     private int number;
     @Column(name = "release_year")
     private int releaseYear;

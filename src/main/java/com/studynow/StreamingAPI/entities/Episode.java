@@ -18,6 +18,17 @@ public class Episode {
     private int duration;
     @Column(name = "video_url")
     private String videoUrl;
+    @ManyToOne
+    @JoinColumn(name = "season_id")
+    private  Season season;
+
+    public Season getSeason() {
+        return season;
+    }
+
+    public void setSeason(Season season) {
+        this.season = season;
+    }
 
     public Episode() {
     }
