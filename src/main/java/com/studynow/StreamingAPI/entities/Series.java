@@ -3,10 +3,10 @@ package com.studynow.StreamingAPI.entities;
 import com.studynow.StreamingAPI.averagerating.IAverageRating;
 import com.studynow.StreamingAPI.enums.Genre;
 import com.studynow.StreamingAPI.enums.Rating;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 @Entity(name = "series")
 public class Series implements IAverageRating {
@@ -14,11 +14,21 @@ public class Series implements IAverageRating {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotNull
+    @NotBlank(message = "Title is mandatory")
+    @NotEmpty
     private String title;
+    @NotNull
+    @NotBlank(message = "Description is mandatory")
+    @NotEmpty
     private String description;
+    @Column(name = "release_year")
     private int releaseYear;
+    @Enumerated(EnumType.STRING)
     private Genre genre;
+    @Enumerated(EnumType.STRING)
     private Rating rating;
+    @Column(name = "total_seasons")
     private int totalSeasons;
 
     @Override

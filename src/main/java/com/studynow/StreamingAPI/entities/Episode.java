@@ -1,19 +1,26 @@
 package com.studynow.StreamingAPI.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 @Entity(name = "episode")
 public class Episode {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotNull
+    @NotBlank(message = "Title is mandatory")
+    @NotEmpty
     private  String title;
     private int number;
+    @NotNull
+    @NotBlank(message = "Description is mandatory")
+    @NotEmpty
     private String description;
     private int duration;
+    @Column(name = "video_url")
     private String videoUrl;
 
     public Long getId() {

@@ -4,6 +4,9 @@ import com.studynow.StreamingAPI.averagerating.IAverageRating;
 import com.studynow.StreamingAPI.enums.Genre;
 import com.studynow.StreamingAPI.enums.Rating;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 @Entity(name = "movie")
 public class Movie implements IAverageRating {
@@ -11,15 +14,23 @@ public class Movie implements IAverageRating {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotNull
+    @NotBlank(message = "Title is mandatory")
     private String title;
+    @NotNull
+    @NotBlank(message = "Description is mandatory")
+    @NotEmpty
     private String description;
+    @Column(name = "video_url")
     private int releaseYear;
     @Enumerated(EnumType.STRING)
     private Genre genre;
     @Enumerated(EnumType.STRING)
     private  Rating rating;
     private int duration;
+    @NotBlank(message = "Director is mandatory")
     private String director;
+    @Column(name = "video_url")
     private String videoUrl;
 
 

@@ -1,9 +1,6 @@
 package com.studynow.StreamingAPI.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity(name = "season")
 public class Season{
@@ -11,6 +8,7 @@ public class Season{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int number;
+    @Column(name = "release_year")
     private int releaseYear;
 
     public Long getId() {
