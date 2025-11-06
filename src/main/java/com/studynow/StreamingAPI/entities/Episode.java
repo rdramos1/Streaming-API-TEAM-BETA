@@ -15,6 +15,7 @@ public class Episode {
     private int number;
     @NotBlank(message = "Description is mandatory")
     private String description;
+    @NotNull
     private int duration;
     @Column(name = "video_url")
     private String videoUrl;
