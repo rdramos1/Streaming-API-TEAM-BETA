@@ -1,4 +1,53 @@
 package com.studynow.StreamingAPI.entities;
 
-public record Season(Long id, int number, int releaseYear) {
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+
+@Entity(name = "season")
+public class Season{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @NotNull
+    private int number;
+    @Column(name = "release_year")
+    private int releaseYear;
+    @ManyToOne
+    @JoinColumn(name = "series_id")
+    private Series series;
+
+    public Series getSeries() {
+        return series;
+    }
+
+    public void setSeries(Series series) {
+        this.series = series;
+    }
+
+    public Season() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public int getReleaseYear() {
+        return releaseYear;
+    }
+
+    public void setReleaseYear(int releaseYear) {
+        this.releaseYear = releaseYear;
+    }
 }
