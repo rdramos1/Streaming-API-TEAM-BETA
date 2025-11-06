@@ -12,6 +12,17 @@ public class Season{
     private int number;
     @Column(name = "release_year")
     private int releaseYear;
+    @ManyToOne
+    @JoinColumn(name = "series_id")
+    private Series series;
+
+    public Series getSeries() {
+        return series;
+    }
+
+    public void setSeries(Series series) {
+        this.series = series;
+    }
 
     public Season() {
     }

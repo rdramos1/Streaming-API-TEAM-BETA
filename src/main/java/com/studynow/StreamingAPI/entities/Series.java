@@ -25,8 +25,7 @@ public class Series implements IAverageRating {
     private Genre genre;
     @Enumerated(EnumType.STRING)
     private Rating rating;
-    @Column(name = "total_seasons")
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "series", cascade = CascadeType.ALL)
     private List<Season> totalSeasons = new ArrayList<>();
 
     public Series() {

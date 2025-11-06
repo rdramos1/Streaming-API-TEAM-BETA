@@ -20,17 +20,9 @@ public class Episode {
     private int duration;
     @Column(name = "video_url")
     private String videoUrl;
-    @ManyToOne
-    @JoinColumn(name = "season_id")
-    private  Season season;
 
-    public Season getSeason() {
-        return season;
-    }
+    private int totalSeasons;
 
-    public void setSeason(Season season) {
-        this.season = season;
-    }
 
     public Episode() {
     }
@@ -81,5 +73,13 @@ public class Episode {
 
     public void setVideoUrl(String videoUrl) {
         this.videoUrl = videoUrl;
+    }
+
+    public int getTotalSeasons() {
+        return totalSeasons;
+    }
+
+    public void setTotalSeasons(int totalSeasons) {
+        this.totalSeasons = totalSeasons;
     }
 }
