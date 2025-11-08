@@ -1,6 +1,10 @@
 package com.studynow.StreamingAPI.entities;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Id;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -8,10 +12,10 @@ import jakarta.validation.constraints.NotNull;
 import java.time.Instant;
 import java.util.Date;
 
-@Entity(name = "review")
+@jakarta.persistence.Entity(name = "review")
 public class Review {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @jakarta.persistence.GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id;
     @NotNull
     private int score;

@@ -3,7 +3,15 @@ package com.studynow.StreamingAPI.entities;
 import com.studynow.StreamingAPI.averagerating.IAverageRating;
 import com.studynow.StreamingAPI.enums.Genre;
 import com.studynow.StreamingAPI.enums.Rating;
-import jakarta.persistence.*;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotBlank;
 
 import java.util.ArrayList;
